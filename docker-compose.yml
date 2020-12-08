@@ -1,0 +1,50 @@
+version: '3.4'
+
+services:
+  bartenders:
+    image: ${DOCKER_REGISTRY-}bartenders
+    build:
+      context: .
+      dockerfile: Bartenders/Dockerfile
+    ports:
+      - 32834:443
+
+  busboys:
+    image: ${DOCKER_REGISTRY-}busboys
+    build:
+      context: .
+      dockerfile: BusBoys/Dockerfile
+    ports:
+      - 32835:443
+
+  frontendui:
+    image: ${DOCKER_REGISTRY-}frontendui
+    build:
+      context: .
+      dockerfile: FrontEndUI/Dockerfile
+    ports:
+      - 32836:443
+
+  host-hostess:
+    image: ${DOCKER_REGISTRY-}hosthostess
+    build:
+      context: .
+      dockerfile: Host-Hostess/Dockerfile
+    ports:
+      - 32837:443
+
+  kitchen:
+    image: ${DOCKER_REGISTRY-}kitchen
+    build:
+      context: .
+      dockerfile: Kitchen/Dockerfile
+    ports:
+      - 32838:443
+
+  waiter-waitress:
+    image: ${DOCKER_REGISTRY-}waiterwaitress
+    build:
+      context: .
+      dockerfile: Waiter-Waitress/Dockerfile
+    ports:
+      - 32839:443

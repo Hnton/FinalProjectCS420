@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BuFaHaEFep/mvsrJZcBvL2FIgGd1BpgITq4Sgc0HBH+poXsgX0LwQs8R9zVhycYGvEDXmsT+Wmx0owk8p0qc8A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mikael\\Documents\\GitHub\\FinalProjectCS420\\WindowsFormsApp1\\WindowsFormsApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mikael\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
+    "C:\\Users\\Mikael\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Mikael\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

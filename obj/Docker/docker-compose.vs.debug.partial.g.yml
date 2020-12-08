@@ -1,0 +1,169 @@
+version: '3.4'
+
+services:
+  bartenders:
+    image: bartenders:dev
+    container_name: Bartenders
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Bartenders"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_bartenders$
+    volumes:
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420\Bartenders:/app
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420:/src
+      - C:\Users\Mikael\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_bartenders$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_bartenders$ \"/app/bin/Debug/netcoreapp3.1/Bartenders.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+  busboys:
+    image: busboys:dev
+    container_name: BusBoys
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "BusBoys"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_busboys$
+    volumes:
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420\BusBoys:/app
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420:/src
+      - C:\Users\Mikael\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_busboys$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_busboys$ \"/app/bin/Debug/netcoreapp3.1/BusBoys.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  frontendui:
+    image: frontendui:dev
+    container_name: FrontEndUI
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "FrontEndUI"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_frontendui$
+    volumes:
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420\FrontEndUI:/app
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420:/src
+      - C:\Users\Mikael\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_frontendui$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_frontendui$ \"/app/bin/Debug/netcoreapp3.1/FrontEndUI.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  host-hostess:
+    image: hosthostess:dev
+    container_name: Host-Hostess
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Host-Hostess"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_host-hostess$
+    volumes:
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420\Host-Hostess:/app
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420:/src
+      - C:\Users\Mikael\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_host-hostess$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_host-hostess$ \"/app/bin/Debug/netcoreapp3.1/Host-Hostess.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  kitchen:
+    image: kitchen:dev
+    container_name: Kitchen
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Kitchen"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_kitchen$
+    volumes:
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420\Kitchen:/app
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420:/src
+      - C:\Users\Mikael\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_kitchen$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_kitchen$ \"/app/bin/Debug/netcoreapp3.1/Kitchen.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  waiter-waitress:
+    image: waiterwaitress:dev
+    container_name: Waiter-Waitress
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Waiter-Waitress"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_waiter-waitress$
+    volumes:
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420\Waiter-Waitress:/app
+      - C:\Users\Mikael\Desktop\CS420\FinalProjectCS420:/src
+      - C:\Users\Mikael\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_waiter-waitress$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_waiter-waitress$ \"/app/bin/Debug/netcoreapp3.1/Waiter-Waitress.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true

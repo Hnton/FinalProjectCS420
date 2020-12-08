@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q/naIIkhynOHNSfI2bq5ICCYlY3maLmlGEvQFWD1hL/AUiPPZiIWFuW86ptwyesWKCUGGIKuvrjc1+Uhn1jEwA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mikael\\Desktop\\CS420\\FinalProjectCS420\\FrontEndUI\\FrontEndUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mikael\\.nuget\\packages\\bootstrap\\4.5.3\\bootstrap.4.5.3.nupkg.sha512",
+    "C:\\Users\\Mikael\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
+    "C:\\Users\\Mikael\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
+    "C:\\Users\\Mikael\\.nuget\\packages\\popper.js\\1.16.1\\popper.js.1.16.1.nupkg.sha512"
+  ],
+  "logs": []
+}

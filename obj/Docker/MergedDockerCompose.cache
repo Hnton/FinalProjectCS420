@@ -1,0 +1,98 @@
+services:
+  bartenders:
+    build:
+      context: C:\Users\Mikael\Desktop\CS420\FinalProjectCS420
+      dockerfile: Bartenders/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: bartenders
+    ports:
+    - target: 80
+    - published: 32834
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Mikael\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mikael\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  busboys:
+    build:
+      context: C:\Users\Mikael\Desktop\CS420\FinalProjectCS420
+      dockerfile: BusBoys/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: busboys
+    ports:
+    - target: 80
+    - published: 32835
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Mikael\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mikael\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  frontendui:
+    build:
+      context: C:\Users\Mikael\Desktop\CS420\FinalProjectCS420
+      dockerfile: FrontEndUI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: frontendui
+    ports:
+    - target: 80
+    - published: 32836
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Mikael\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mikael\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  host-hostess:
+    build:
+      context: C:\Users\Mikael\Desktop\CS420\FinalProjectCS420
+      dockerfile: Host-Hostess/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: hosthostess
+    ports:
+    - target: 80
+    - published: 32837
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Mikael\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mikael\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  kitchen:
+    build:
+      context: C:\Users\Mikael\Desktop\CS420\FinalProjectCS420
+      dockerfile: Kitchen/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: kitchen
+    ports:
+    - target: 80
+    - published: 32838
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Mikael\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mikael\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  waiter-waitress:
+    build:
+      context: C:\Users\Mikael\Desktop\CS420\FinalProjectCS420
+      dockerfile: Waiter-Waitress/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: waiterwaitress
+    ports:
+    - target: 80
+    - published: 32839
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Mikael\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mikael\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
